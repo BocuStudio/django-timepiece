@@ -158,6 +158,7 @@ class ProjectHoursForm(forms.ModelForm):
 
     class Meta:
         model = ProjectHours
+        exclude = ()
 
 
 class ProjectHoursSearchForm(forms.Form):
