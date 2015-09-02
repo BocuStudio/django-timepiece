@@ -483,7 +483,7 @@ class EditProject(PermissionsRequiredMixin, UpdateView):
 @csrf_exempt
 @require_POST
 @permission_required('crm.add_projectrelationship')
-@transaction.commit_on_success
+@transaction.atomic
 def create_relationship(request):
     user_id = request.REQUEST.get('user_id', None)
     project_id = request.REQUEST.get('project_id', None)
